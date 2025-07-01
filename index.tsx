@@ -8,19 +8,12 @@ import {
   FlatList,
 } from 'react-native';
  
-// =====================
-// Tipos
-// =====================
 interface Task {
   id: string;
   title: string;
   done: boolean;
 }
- 
-// =====================
-// Componente: TaskInput
-// Campo de texto + botão "Adicionar"
-// =====================
+
 function TaskInput({ onAdd }: { onAdd: (taskTitle: string) => void }) {
   const [text, setText] = useState('');
  
@@ -48,10 +41,6 @@ function TaskInput({ onAdd }: { onAdd: (taskTitle: string) => void }) {
   );
 }
  
-// =====================
-// Componente: TaskItem
-// Renderiza cada tarefa com opções de toggle & delete
-// =====================
 function TaskItem({
   task,
   onToggle,
@@ -80,10 +69,6 @@ function TaskItem({
   );
 }
  
-// =====================
-// Componente: TaskList
-// Lista FlatList de TaskItem
-// =====================
 function TaskList({
   tasks,
   onToggle,
@@ -107,10 +92,7 @@ function TaskList({
     />
   );
 }
- 
-// =====================
-// Componente principal: App
-// =====================
+
 export default function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
  
@@ -141,10 +123,7 @@ export default function App() {
 </View>
   );
 }
- 
-// =====================
-// Estilos
-// =====================
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
